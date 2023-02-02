@@ -2,9 +2,13 @@ pipeline {
   agent any
   stages{
    stage('stage:scm') {
-   steps {
-      git changelog: false, poll: false, url: 'https://github.com/dstar55/docker-hello-world-spring-boot.git'
-       }
-      }
+    steps {
+      git 'https://github.com/Malini8106/docker-hello-world-spring-boot.git'
+    }
    }
- }
+  stage('build') {
+    steps {
+      sh 'mvn clean install'
+     }
+  }
+}
