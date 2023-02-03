@@ -6,5 +6,10 @@ pipeline {
                 git changelog: false, poll: false, url: 'https://github.com/LuisJoseSanchez/hello-world-java.git'
             }
         }
+        stage('stage:maven build'){
+          steps  {
+            sh 'mvn clean install'
+          }
+        }
     }
 }
