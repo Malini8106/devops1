@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages { 
-        stage('example') {
+        stage('stage:scm') {
             steps {
-                echo 'Hello World'
+                git changelog: false, poll: false, url: 'https://github.com/LuisJoseSanchez/hello-world-java.git'
             }
         }
     }
